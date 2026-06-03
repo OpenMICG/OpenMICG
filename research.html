@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenMICG | 研究与成果</title>
+    <meta name="description" content="OpenMICG 科研页面：研究方向、项目与代表性论著。" />
+    <meta name="keywords" content="研究方向,科研项目,论文,实验室成果" />
+    <meta name="theme-color" content="#12324a" />
+    <link rel="stylesheet" href="./assets/css/style.css?v=20260521-3" />
+    <script defer src="./assets/data/site-content.js?v=20260521-3"></script>
+    <script defer src="./assets/js/main.js?v=20260521-3"></script>
+  </head>
+  <body data-page="research">
+    <a class="skip-link" id="skip-link" href="#main-content">跳转到正文</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="./index.html" aria-label="返回实验室介绍页">
+          <span class="brand-mark">L</span>
+          <span id="nav-lab-name">OpenMICG</span>
+        </a>
+
+        <div class="nav-controls">
+          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开或关闭导航菜单">菜单</button>
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <a id="nav-lab" href="./index.html">实验室介绍</a>
+            <a id="nav-members" href="./members.html">成员</a>
+            <a id="nav-research" class="is-active" href="./research.html">科研</a>
+          </nav>
+          <button class="lang-toggle" id="lang-toggle" aria-label="切换到英文">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section-block section-alt page-with-sidebar" id="research-page">
+        <div class="container sidebar-layout">
+          <aside class="left-sidebar reveal" aria-label="成员速览">
+            <div class="sidebar-card">
+              <h3 id="sidebar-members-title">成员速览</h3>
+              <div id="side-members-list" class="side-members-list"></div>
+            </div>
+          </aside>
+
+          <div class="main-column">
+            <section class="section-block section-inner" id="research" aria-labelledby="research-title">
+              <header class="section-head reveal">
+                <p class="section-label" id="research-label">Research</p>
+                <h2 id="research-title">研究与成果</h2>
+              </header>
+              <div class="research-layout">
+                <div>
+                  <h3 class="group-title" id="research-directions-title">研究方向</h3>
+                  <div id="research-directions" class="card-grid"></div>
+                </div>
+                <div>
+                  <h3 class="group-title" id="research-outcomes-title">科研项目</h3>
+                  <div id="research-outcomes" class="card-grid"></div>
+                </div>
+              </div>
+              <div class="publication-section">
+                <h3 class="group-title" id="research-publications-title">代表性论著</h3>
+                <div id="research-publications" class="publication-list"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-layout">
+        <div>
+          <h2 class="footer-title" id="footer-contact-title">联系方式</h2>
+          <p id="footer-email"></p>
+          <p id="footer-address"></p>
+        </div>
+        <div>
+          <h2 class="footer-title" id="footer-links-title">学术主页链接</h2>
+          <div id="footer-links" class="footer-links"></div>
+        </div>
+      </div>
+      <p class="footer-copy" id="footer-copy"></p>
+    </footer>
+  </body>
+</html>

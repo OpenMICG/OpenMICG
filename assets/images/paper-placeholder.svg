@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF1F8"/>
+      <stop offset="1" stop-color="#DFEAF4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="28" fill="url(#bg)"/>
+  <rect x="72" y="82" width="462" height="290" rx="14" fill="#F6FAFE" stroke="#C7D8E8" stroke-width="2"/>
+  <rect x="104" y="124" width="240" height="20" rx="10" fill="#D5E3F1"/>
+  <rect x="104" y="164" width="390" height="16" rx="8" fill="#E1ECF6"/>
+  <rect x="104" y="198" width="350" height="16" rx="8" fill="#E1ECF6"/>
+  <rect x="104" y="232" width="288" height="16" rx="8" fill="#E1ECF6"/>
+  <rect x="104" y="282" width="148" height="38" rx="12" fill="#BFD4E8"/>
+  <rect x="572" y="82" width="636" height="556" rx="14" fill="#F6FAFE" stroke="#C7D8E8" stroke-width="2"/>
+  <path d="M638 542L786 394L890 482L1016 350L1142 542H638Z" fill="#CFE0F0"/>
+  <circle cx="840" cy="244" r="54" fill="#C2D8EA"/>
+  <text x="96" y="640" fill="#55718A" font-family="Arial, sans-serif" font-size="42" font-weight="600">
+    Representative Figure Placeholder
+  </text>
+</svg>

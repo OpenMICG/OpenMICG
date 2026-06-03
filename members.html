@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenMICG | 实验室成员</title>
+    <meta name="description" content="OpenMICG 成员页面：导师信息与学生成员分组展示。" />
+    <meta name="keywords" content="实验室成员,导师,研究生,课题组" />
+    <meta name="theme-color" content="#12324a" />
+    <link rel="stylesheet" href="./assets/css/style.css?v=20260521-3" />
+    <script defer src="./assets/data/site-content.js?v=20260521-3"></script>
+    <script defer src="./assets/js/main.js?v=20260521-3"></script>
+  </head>
+  <body data-page="members">
+    <a class="skip-link" id="skip-link" href="#main-content">跳转到正文</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="./index.html" aria-label="返回实验室介绍页">
+          <span class="brand-mark">L</span>
+          <span id="nav-lab-name">OpenMICG</span>
+        </a>
+
+        <div class="nav-controls">
+          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开或关闭导航菜单">菜单</button>
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <a id="nav-lab" href="./index.html">实验室介绍</a>
+            <a id="nav-members" class="is-active" href="./members.html">成员</a>
+            <a id="nav-research" href="./research.html">科研</a>
+          </nav>
+          <button class="lang-toggle" id="lang-toggle" aria-label="切换到英文">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section-block section-alt" id="members" aria-labelledby="members-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="section-label" id="members-label">Team</p>
+            <h2 id="members-title">实验室团队</h2>
+          </header>
+          <div class="team-panel">
+            <div class="mentor-layout reveal" id="team-mentor">
+              <div class="mentor-info-stack">
+                <article class="mentor-card">
+                  <div class="mentor-card-main">
+                    <aside class="mentor-photo" role="img" aria-label="导师照片占位区域">
+                      <img id="mentor-photo-image" class="mentor-photo-image" src="./assets/images/mentor.jpg" alt="导师照片" />
+                      <div id="mentor-photo-fallback" class="mentor-photo-fallback">
+                        <span id="mentor-photo-label">导师照片占位</span>
+                        <small id="mentor-photo-note">后续可替换为真实照片：assets/images/mentor.jpg</small>
+                      </div>
+                    </aside>
+                    <div class="mentor-content">
+                      <h3 id="mentor-name"></h3>
+                      <p class="mentor-role" id="mentor-role"></p>
+                      <p id="mentor-bio"></p>
+                    </div>
+                  </div>
+                  <div class="mentor-grid">
+                    <div>
+                      <h4 id="mentor-history-title">教育背景与学术经历</h4>
+                      <ul id="mentor-history"></ul>
+                    </div>
+                    <div>
+                      <h4 id="mentor-contact-title">联系方式</h4>
+                      <ul id="mentor-contact"></ul>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="team-divider" aria-hidden="true"></div>
+
+            <div class="team-members-wrap reveal" id="team-members">
+              <h3 class="team-subtitle" id="team-subtitle">学生成员</h3>
+              <div id="member-groups"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-layout">
+        <div>
+          <h2 class="footer-title" id="footer-contact-title">联系方式</h2>
+          <p id="footer-email"></p>
+          <p id="footer-address"></p>
+        </div>
+        <div>
+          <h2 class="footer-title" id="footer-links-title">学术主页链接</h2>
+          <div id="footer-links" class="footer-links"></div>
+        </div>
+      </div>
+      <p class="footer-copy" id="footer-copy"></p>
+    </footer>
+  </body>
+</html>

@@ -3,45 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>实验室主页模板 | 多模态与视觉智能研究</title>
-    <meta
-      name="description"
-      content="一个可直接部署到 GitHub Pages 的课题组主页模板，适用于计算机视觉、多模态与人工智能方向实验室。"
-    />
-    <meta
-      name="keywords"
-      content="实验室主页,课题组网站,计算机视觉,多模态,人工智能,GitHub Pages"
-    />
+    <title>余婷 | 学术主页</title>
+    <meta name="description" content="导师个人学术主页：研究方向、学术服务、团队信息、科研成果与招生合作。" />
+    <meta name="keywords" content="学术主页,多模态,具身智能,可信人工智能,视觉语言模型,跨媒体智能" />
     <meta name="theme-color" content="#12324a" />
-    <link rel="stylesheet" href="./assets/css/style.css?v=20260423-2" />
-    <script defer src="./assets/data/site-content.js?v=20260423-2"></script>
-    <script defer src="./assets/js/main.js?v=20260423-2"></script>
+    <link rel="stylesheet" href="./assets/css/style.css?v=20260521-3" />
+    <script defer src="./assets/data/site-content.js?v=20260521-3"></script>
+    <script defer src="./assets/js/main.js?v=20260521-3"></script>
   </head>
-  <body>
+  <body data-page="lab">
     <a class="skip-link" id="skip-link" href="#main-content">跳转到正文</a>
 
     <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="返回页面顶部">
+        <a class="brand" href="./index.html" aria-label="返回主页">
           <span class="brand-mark">L</span>
-          <span id="nav-lab-name">实验室主页模板</span>
+          <span id="nav-lab-name">OpenMICG</span>
         </a>
+
         <div class="nav-controls">
-          <button
-            class="nav-toggle"
-            id="nav-toggle"
-            aria-expanded="false"
-            aria-controls="site-nav"
-            aria-label="打开或关闭导航菜单"
-          >
-            菜单
-          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开或关闭导航菜单">菜单</button>
           <nav class="site-nav" id="site-nav" aria-label="主导航">
-            <a id="nav-mentor" href="#team-mentor">导师</a>
-            <a id="nav-lab" href="#lab">实验室</a>
-            <a id="nav-members" href="#team-members">成员</a>
-            <a id="nav-research" href="#research">研究</a>
-            <a id="nav-join" href="#join">加入我们</a>
+            <a id="nav-lab" class="is-active" href="./index.html">实验室介绍</a>
+            <a id="nav-members" href="./members.html">成员</a>
+            <a id="nav-research" href="./research.html">科研</a>
           </nav>
           <button class="lang-toggle" id="lang-toggle" aria-label="切换到英文">EN</button>
         </div>
@@ -50,173 +35,119 @@
 
     <main id="main-content">
       <section class="hero section-block" id="home" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="sr-only">导师学术主页</h1>
         <div class="container hero-grid">
           <div class="hero-main reveal">
-            <p class="hero-kicker" id="hero-kicker">研究导向型实验室</p>
-            <h1 id="hero-title">多模态与视觉智能实验室</h1>
-            <p class="hero-tagline" id="hero-tagline">
-              面向真实场景问题，构建可信、可解释、可落地的智能系统。
-            </p>
-            <ul class="hero-keywords" id="hero-keywords"></ul>
-            <div class="hero-actions">
-              <a class="btn btn-primary" id="hero-btn-lab" href="#lab">了解实验室</a>
-              <a class="btn btn-secondary" id="hero-btn-join" href="#join">招生与加入</a>
-            </div>
+            <section class="mentor-hero-card" id="mentor-home" aria-labelledby="mentor-profile-title">
+              <header class="section-head hero-section-head">
+                <h2 id="mentor-profile-title">个人介绍</h2>
+              </header>
+              <article class="mentor-card mentor-featured">
+                <div class="mentor-card-main">
+                  <aside class="mentor-photo mentor-photo-large" role="img" aria-label="导师照片">
+                    <img id="mentor-photo-image" class="mentor-photo-image" src="./assets/images/mentor.jpg" alt="导师照片" />
+                    <div id="mentor-photo-fallback" class="mentor-photo-fallback">
+                      <span id="mentor-photo-label">导师照片占位</span>
+                      <small id="mentor-photo-note">assets/images/mentor.jpg</small>
+                    </div>
+                  </aside>
+                  <div class="mentor-content">
+                    <p class="mentor-mini-label" id="mentor-overview-title">学术简介</p>
+                    <h3 id="mentor-name"></h3>
+                    <p class="mentor-title" id="mentor-title"></p>
+                    <p class="mentor-direction" id="mentor-direction"></p>
+                    <p id="mentor-bio"></p>
+                    <ul class="hero-keywords mentor-keywords" id="hero-keywords"></ul>
+                    <div class="mentor-links-block">
+                      <p class="mentor-links-title" id="mentor-links-title">学术链接</p>
+                      <div id="mentor-links" class="mentor-links"></div>
+                    </div>
+                    <div class="hero-actions mentor-actions">
+                      <a class="btn btn-primary" id="hero-btn-lab" href="#lab">学术简介</a>
+                      <a class="btn btn-secondary" id="hero-btn-join" href="#join">合作交流</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
           </div>
           <aside class="hero-visual reveal" aria-label="实验室概览信息">
-            <div class="visual-card">
-              <h2 id="hero-overview-title">实验室概览</h2>
-              <ul id="hero-highlights" class="highlight-list"></ul>
+            <div class="hero-side-stack">
+              <article class="card compact-card">
+                <h3 id="mentor-areas-title">研究领域</h3>
+                <ul id="mentor-research-areas"></ul>
+              </article>
+              <div class="visual-card">
+                <h2 id="hero-overview-title">学术概览</h2>
+                <ul id="hero-highlights" class="highlight-list"></ul>
+              </div>
+              <article class="card compact-card">
+                <h3 id="mentor-services-title">学术服务与科研工作</h3>
+                <ul id="mentor-academic-services"></ul>
+              </article>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="section-block section-alt" id="members" aria-labelledby="members-title">
-        <div class="container">
-          <header class="section-head reveal">
-            <p class="section-label" id="members-label">Team</p>
-            <h2 id="members-title">实验室团队</h2>
-          </header>
-          <div class="team-panel">
-            <div class="mentor-layout reveal" id="team-mentor">
-              <div class="mentor-info-stack">
-                <article class="mentor-card">
-                  <div class="mentor-card-main">
-                    <aside class="mentor-photo" role="img" aria-label="导师照片占位区域">
-                      <img
-                        id="mentor-photo-image"
-                        class="mentor-photo-image"
-                        src="./assets/images/mentor.jpg"
-                        alt="导师照片"
-                      />
-                      <div id="mentor-photo-fallback" class="mentor-photo-fallback">
-                        <span id="mentor-photo-label">导师照片占位</span>
-                        <small id="mentor-photo-note">后续可替换为真实照片：`assets/images/mentor.jpg`</small>
-                      </div>
-                    </aside>
-                    <div class="mentor-content">
-                      <h3 id="mentor-name">导师姓名（占位）</h3>
-                      <p class="mentor-role" id="mentor-role">
-                        教授 / 博士生导师 | 研究方向占位
-                      </p>
-                      <p id="mentor-bio"></p>
-                    </div>
-                  </div>
-                  <div class="mentor-grid">
-                    <div>
-                      <h4 id="mentor-history-title">教育背景与学术经历</h4>
-                      <ul id="mentor-history"></ul>
-                    </div>
-                    <div>
-                      <h4 id="mentor-contact-title">联系方式</h4>
-                      <ul id="mentor-contact"></ul>
-                    </div>
-                  </div>
-                </article>
+      <section class="section-block section-alt page-with-sidebar" id="lab-overview">
+        <div class="container sidebar-layout">
+          <aside class="left-sidebar reveal" aria-label="成员速览">
+            <div class="sidebar-card">
+              <h3 id="sidebar-members-title">成员速览</h3>
+              <div id="side-members-list" class="side-members-list"></div>
+            </div>
+          </aside>
 
-                <article class="mentor-card postdoc-card" id="team-postdoc">
-                  <h3 id="postdoc-name">博士后姓名（占位）</h3>
-                  <p class="mentor-role" id="postdoc-role">博士后 | 研究方向占位</p>
-                  <p id="postdoc-bio"></p>
-                  <div class="mentor-grid">
-                    <div>
-                      <h4 id="postdoc-focus-title">研究方向</h4>
-                      <ul id="postdoc-focus"></ul>
-                    </div>
-                    <div>
-                      <h4 id="postdoc-contact-title">联系方式</h4>
-                      <ul id="postdoc-contact"></ul>
-                    </div>
-                  </div>
+          <div class="main-column">
+            <section class="section-block section-inner" id="lab" aria-labelledby="lab-title">
+              <header class="section-head reveal">
+                <p class="section-label" id="lab-label">About Lab</p>
+                <h2 id="lab-title">研究团队</h2>
+              </header>
+              <div class="lab-intro-grid">
+                <article class="card reveal">
+                  <h3 id="lab-focus-title">研究主题与核心方向</h3>
+                  <ul id="lab-focus"></ul>
+                </article>
+                <article class="card reveal">
+                  <h3 id="lab-philosophy-title">研究理念</h3>
+                  <p id="lab-philosophy"></p>
+                  <h3 class="subhead" id="lab-culture-title">实验室文化</h3>
+                  <p id="lab-culture"></p>
+                </article>
+                <article class="card reveal">
+                  <h3 id="lab-welcome-title">招生与合作</h3>
+                  <p id="lab-welcome"></p>
                 </article>
               </div>
-            </div>
+            </section>
 
-            <div class="team-divider" aria-hidden="true"></div>
+            <section class="section-block section-inner" id="news" aria-labelledby="news-title">
+              <header class="section-head reveal">
+                <p class="section-label" id="news-label">Updates</p>
+                <h2 id="news-title">实验室日常信息</h2>
+              </header>
+              <div id="news-timeline" class="timeline"></div>
+            </section>
 
-            <div class="team-members-wrap reveal" id="team-members">
-              <h3 class="team-subtitle" id="team-subtitle">学生成员（按年级 / 届别分组）</h3>
-              <div id="member-groups"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="lab" aria-labelledby="lab-title">
-        <div class="container">
-          <header class="section-head reveal">
-            <p class="section-label" id="lab-label">About Lab</p>
-            <h2 id="lab-title">实验室简介</h2>
-          </header>
-          <div class="lab-intro-grid">
-            <article class="card reveal">
-              <h3 id="lab-focus-title">研究主题与核心方向</h3>
-              <ul id="lab-focus"></ul>
-            </article>
-            <article class="card reveal">
-              <h3 id="lab-philosophy-title">研究理念</h3>
-              <p id="lab-philosophy"></p>
-              <h3 class="subhead" id="lab-culture-title">实验室文化</h3>
-              <p id="lab-culture"></p>
-            </article>
-            <article class="card reveal">
-              <h3 id="lab-welcome-title">招生与合作</h3>
-              <p id="lab-welcome"></p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="news" aria-labelledby="news-title">
-        <div class="container">
-          <header class="section-head reveal">
-            <p class="section-label" id="news-label">Updates</p>
-            <h2 id="news-title">实验室日常信息</h2>
-          </header>
-          <div id="news-timeline" class="timeline"></div>
-        </div>
-      </section>
-
-      <section class="section-block section-alt" id="research" aria-labelledby="research-title">
-        <div class="container">
-          <header class="section-head reveal">
-            <p class="section-label" id="research-label">Research</p>
-            <h2 id="research-title">研究与成果</h2>
-          </header>
-          <div class="research-layout">
-            <div>
-              <h3 class="group-title" id="research-directions-title">研究方向</h3>
-              <div id="research-directions" class="card-grid"></div>
-            </div>
-            <div>
-              <h3 class="group-title" id="research-outcomes-title">代表性成果（占位）</h3>
-              <div id="research-outcomes" class="card-grid"></div>
-            </div>
-          </div>
-          <div class="publication-section">
-            <h3 class="group-title" id="research-publications-title">代表性论著</h3>
-            <div id="research-publications" class="publication-list"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="join" aria-labelledby="join-title">
-        <div class="container">
-          <header class="section-head reveal">
-            <p class="section-label" id="join-label">Join Us</p>
-            <h2 id="join-title">招生 / 加入我们</h2>
-          </header>
-          <div class="join-layout">
-            <article class="card reveal">
-              <h3 id="join-expectations-title">我们期待的能力</h3>
-              <ul id="join-expectations"></ul>
-            </article>
-            <article class="card reveal">
-              <h3 id="join-process-title">加入流程建议</h3>
-              <ol id="join-process"></ol>
-              <p id="join-note" class="join-note"></p>
-            </article>
+            <section class="section-block section-inner" id="join" aria-labelledby="join-title">
+              <header class="section-head reveal">
+                <p class="section-label" id="join-label">Join Us</p>
+                <h2 id="join-title">招生 / 加入我们</h2>
+              </header>
+              <div class="join-layout">
+                <article class="card reveal">
+                  <h3 id="join-expectations-title">我们期待的能力</h3>
+                  <ul id="join-expectations"></ul>
+                </article>
+                <article class="card reveal">
+                  <h3 id="join-process-title">加入流程建议</h3>
+                  <ol id="join-process"></ol>
+                  <p id="join-note" class="join-note"></p>
+                </article>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -228,10 +159,6 @@
           <h2 class="footer-title" id="footer-contact-title">联系方式</h2>
           <p id="footer-email"></p>
           <p id="footer-address"></p>
-        </div>
-        <div>
-          <h2 class="footer-title" id="footer-links-title">学术主页链接</h2>
-          <div id="footer-links" class="footer-links"></div>
         </div>
       </div>
       <p class="footer-copy" id="footer-copy"></p>
