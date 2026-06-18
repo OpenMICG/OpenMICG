@@ -2,6 +2,7 @@ const LANG_STORAGE_KEY = "lab_site_lang";
 const SITE_CONTENT = window.SITE_CONTENT_DATA || {};
 let currentLang = "zh";
 let revealObserver = null;
+let activeView = "news";
 
 function getCurrentContent() {
   return SITE_CONTENT[currentLang] || SITE_CONTENT.zh;
@@ -39,15 +40,15 @@ function applyStaticUI(content) {
   setText("skip-link", ui.skipLink);
   setText("nav-toggle", ui.navMenu);
   setText("nav-lab", ui.navLab);
+  setText("nav-news", ui.navNews || ui.newsTitle);
   setText("nav-members", ui.navMembers);
   setText("nav-research", ui.navResearch);
+  setText("nav-projects", ui.navProjects || ui.researchOutcomesTitle);
+  setText("nav-publications", ui.navPublications || ui.researchPublicationsTitle);
+  setText("nav-join", ui.navJoin || ui.joinTitle);
   setText("sidebar-members-title", ui.sidebarMembersTitle || "");
-  setText("hero-btn-lab", ui.heroBtnLab);
-  setText("hero-btn-join", ui.heroBtnJoin);
   setText("hero-overview-title", ui.heroOverviewTitle);
   setText("mentor-profile-label", ui.mentorProfileLabel);
-  setText("mentor-profile-title", ui.mentorProfileTitle);
-  setText("mentor-overview-title", ui.mentorOverviewTitle);
   setText("mentor-links-title", ui.mentorLinksTitle || "");
   setText("mentor-areas-title", ui.mentorAreasTitle);
   setText("mentor-services-title", ui.mentorServicesTitle);
@@ -57,7 +58,6 @@ function applyStaticUI(content) {
   setText("mentor-photo-note", ui.mentorPhotoNote);
   setText("mentor-history-title", ui.mentorHistoryTitle);
   setText("mentor-contact-title", ui.mentorContactTitle);
-  setText("team-subtitle", ui.teamSubtitle);
   setText("lab-label", ui.labLabel);
   setText("lab-title", ui.labTitle);
   setText("lab-focus-title", ui.labFocusTitle);
@@ -68,6 +68,7 @@ function applyStaticUI(content) {
   setText("news-title", ui.newsTitle);
   setText("research-label", ui.researchLabel);
   setText("research-title", ui.researchTitle);
+  setText("publications-label", ui.publicationsLabel || ui.researchLabel);
   setText("research-directions-title", ui.researchDirectionsTitle);
   setText("research-outcomes-title", ui.researchOutcomesTitle);
   setText("research-publications-title", ui.researchPublicationsTitle);
@@ -202,32 +203,51 @@ function renderNews(content) {
 }
 
 function getStudyOrder(gradeLabel) {
+  if (/(24级|Class of 2024)/.test(gradeLabel)) return 1;
+  if (/(25级|Class of 2025)/.test(gradeLabel)) return 2;
   if (/(三年级|Year 3)/.test(gradeLabel)) return 1;
   if (/(二年级|Year 2)/.test(gradeLabel)) return 2;
   if (/(一年级|Year 1)/.test(gradeLabel)) return 3;
   return 10;
 }
 
+function getCohortLabelFromGrade(gradeLabel) {
+  if (/(24级|Class of 2024)/.test(gradeLabel)) return currentLang === "zh" ? "2024级" : "Class of 2024";
+  if (/(25级|Class of 2025)/.test(gradeLabel)) return currentLang === "zh" ? "2025级" : "Class of 2025";
+  return gradeLabel || "";
+}
+
+function getCohortLabelFromYear(year) {
+  if (!year) return "";
+  const startYear = Number(year) - 3;
+  if (!Number.isFinite(startYear)) return "";
+  return currentLang === "zh" ? `${startYear}级` : `Class of ${startYear}`;
+}
+
 function buildMemberGroups(content) {
   const members = [];
-  (content.students?.master || []).forEach((item) => {
-    members.push({
-      name: item.name,
-      group: item.grade,
-      order: getStudyOrder(item.grade),
-      direction: item.direction,
-      status: content.ui.memberStatusCurrent,
-    });
-  });
 
-  (content.alumni || []).forEach((item) => {
+  (content.alumni || [])
+    .forEach((item, index) => {
+      members.push({
+        name: item.name,
+        group: getCohortLabelFromYear(item.year),
+        order: index,
+        direction: item.focus,
+        destination: item.destination,
+        year: item.year,
+      });
+    });
+
+  (content.students?.master || [])
+    .filter((item) => !/(硕士三年级|M\.S\. Year 3|Year 3)/.test(item.grade || ""))
+    .forEach((item) => {
     members.push({
       name: item.name,
-      group: content.ui.alumniGroupLabel(item.year),
-      order: 100 + (3000 - item.year),
-      direction: item.focus,
-      status: content.ui.memberStatusAlumni,
-      destination: item.destination,
+      group: getCohortLabelFromGrade(item.grade),
+      order: 10 + getStudyOrder(item.grade),
+      direction: item.direction,
+      year: getCohortLabelFromGrade(item.grade),
     });
   });
 
@@ -265,10 +285,8 @@ function renderMembers(content) {
       card.className = "student-card";
       card.innerHTML = `
         <h4>${member.name}</h4>
-        <p>${content.ui.identityPrefix}：${member.status}</p>
         <p>${content.ui.directionPrefix}：${member.direction || "-"}</p>
         ${member.destination ? `<p class="member-destination">${content.ui.destinationPrefix}：${member.destination}</p>` : ""}
-        <span class="student-chip">${group.group}</span>
       `;
       grid.appendChild(card);
     });
@@ -282,14 +300,8 @@ function renderSideMembers(content) {
   if (!root) return;
   root.innerHTML = "";
 
-  const mentor = content.mentor
-    ? [{
-        name: content.mentor.name,
-        meta: content.mentor.role || "",
-      }]
-    : [];
-
   const currentMembers = [...(content.students?.master || [])]
+    .filter((m) => !/(硕士三年级|M\.S\. Year 3|Year 3)/.test(m.grade || ""))
     .sort((a, b) => getStudyOrder(a.grade) - getStudyOrder(b.grade))
     .map((m) => ({
       name: m.name,
@@ -297,13 +309,12 @@ function renderSideMembers(content) {
     }));
 
   const alumniMembers = [...(content.alumni || [])]
-    .sort((a, b) => b.year - a.year)
     .map((m) => ({
       name: m.name,
-      meta: `${content.ui.alumniGroupLabel(m.year)} · ${m.destination || "-"}`,
+      meta: `${m.year} · ${m.destination || "-"}`,
     }));
 
-  const chunks = [...mentor, ...currentMembers, ...alumniMembers];
+  const chunks = [...currentMembers, ...alumniMembers];
 
   chunks.forEach((item) => {
     const row = document.createElement("div");
@@ -317,24 +328,22 @@ function renderResearch(content) {
   const directionRoot = document.getElementById("research-directions");
   const outcomeRoot = document.getElementById("research-outcomes");
   const publicationRoot = document.getElementById("research-publications");
-  if (!directionRoot || !outcomeRoot || !publicationRoot) return;
+  if (!outcomeRoot || !publicationRoot) return;
 
-  directionRoot.innerHTML = "";
+  if (directionRoot) directionRoot.innerHTML = "";
   outcomeRoot.innerHTML = "";
   publicationRoot.innerHTML = "";
 
-  (content.research?.directions || []).forEach((direction) => {
-    const card = document.createElement("article");
-    card.className = "card research-card reveal";
-    card.innerHTML = `<h4>${direction.title}</h4><p>${direction.summary}</p>`;
-    directionRoot.appendChild(card);
-  });
-
   (content.research?.outcomes || []).forEach((outcome) => {
-    const card = document.createElement("article");
-    card.className = "card research-card reveal";
-    card.innerHTML = `<h4>${outcome.title}</h4><p>${outcome.summary}</p>`;
-    outcomeRoot.appendChild(card);
+    const item = document.createElement("article");
+    item.className = "project-item reveal";
+    item.innerHTML = `
+      <div class="project-body">
+        <h4 class="project-title">${outcome.title}</h4>
+        <p class="project-summary">${outcome.summary}</p>
+      </div>
+    `;
+    outcomeRoot.appendChild(item);
   });
 
   const buildPublicationSummary = (pub) => {
@@ -373,12 +382,26 @@ function renderResearch(content) {
 function renderJoin(content) {
   renderList("join-expectations", content.join.expectations || []);
   renderList("join-process", content.join.process || []);
+  const joinEmail = document.getElementById("join-email");
+  if (joinEmail) {
+    joinEmail.textContent = content.join.email || "";
+    joinEmail.setAttribute("href", content.join.emailUrl || "#");
+  }
   setText("join-note", content.join.note);
 }
 
 function renderFooter(content) {
   const footer = content.footer || {};
-  setText("footer-email", footer.email || "");
+  const footerEmail = document.getElementById("footer-email");
+  if (footerEmail) {
+    footerEmail.innerHTML = "";
+    if (footer.email) {
+      const link = document.createElement("a");
+      link.href = footer.emailUrl || "#";
+      link.textContent = footer.email;
+      footerEmail.appendChild(link);
+    }
+  }
   setText("footer-address", footer.address || "");
   setText("footer-copy", footer.copy || "");
 
@@ -402,6 +425,47 @@ function bindMobileNav() {
       nav.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
     });
+  });
+}
+
+function setActiveView(view, shouldUpdateHash = false) {
+  const validViews = ["news", "members", "projects", "publications", "join"];
+  const nextView = validViews.includes(view) ? view : "news";
+  activeView = nextView;
+
+  document.querySelectorAll("[data-view-panel]").forEach((panel) => {
+    const isActive = panel.dataset.viewPanel === nextView;
+    panel.hidden = !isActive;
+    panel.classList.toggle("is-active", isActive);
+  });
+
+  document.querySelectorAll("[data-view-target]").forEach((link) => {
+    const isActive = link.dataset.viewTarget === nextView;
+    link.classList.toggle("is-active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  if (shouldUpdateHash && window.location.hash !== `#${nextView}`) {
+    window.history.pushState(null, "", `#${nextView}`);
+  }
+
+  bindReveal();
+}
+
+function bindPanelNavigation() {
+  const links = document.querySelectorAll("[data-view-target]");
+  if (!links.length) return;
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setActiveView(link.dataset.viewTarget, true);
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    setActiveView(window.location.hash.replace("#", ""), false);
   });
 }
 
@@ -475,6 +539,7 @@ function renderPage() {
   renderFooter(content);
   renderSideMembers(content);
   bindMentorPhoto();
+  setActiveView(activeView, false);
   bindReveal();
 }
 
@@ -492,7 +557,9 @@ function bootstrap() {
   }
 
   bindMobileNav();
+  bindPanelNavigation();
   bindLanguageToggle();
+  activeView = window.location.hash.replace("#", "") || "news";
   renderPage();
 }
 

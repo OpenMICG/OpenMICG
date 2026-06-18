@@ -22,18 +22,53 @@
         </a>
 
         <div class="nav-controls">
-          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开或关闭导航菜单">菜单</button>
-          <nav class="site-nav" id="site-nav" aria-label="主导航">
-            <a id="nav-lab" href="./index.html">实验室介绍</a>
-            <a id="nav-members" class="is-active" href="./members.html">成员</a>
-            <a id="nav-research" href="./research.html">科研</a>
-          </nav>
           <button class="lang-toggle" id="lang-toggle" aria-label="切换到英文">EN</button>
         </div>
       </div>
     </header>
 
     <main id="main-content">
+      <section class="hero section-block" id="home" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="sr-only">导师学术主页</h1>
+        <div class="container hero-shell">
+          <div class="hero-grid">
+            <div class="hero-main reveal">
+              <section class="mentor-hero-card" id="mentor-home" aria-label="导师信息">
+                <article class="mentor-card mentor-featured">
+                  <div class="mentor-card-main">
+                    <aside class="mentor-photo mentor-photo-large" role="img" aria-label="导师照片">
+                      <img id="mentor-photo-image" class="mentor-photo-image" src="./assets/images/mentor.jpg" alt="导师照片" />
+                      <div id="mentor-photo-fallback" class="mentor-photo-fallback">
+                        <span id="mentor-photo-label">导师照片占位</span>
+                        <small id="mentor-photo-note">assets/images/mentor.jpg</small>
+                      </div>
+                    </aside>
+                    <div class="mentor-content">
+                      <h3 id="mentor-name"></h3>
+                      <p class="mentor-title" id="mentor-title"></p>
+                      <p class="mentor-direction" id="mentor-direction"></p>
+                      <p id="mentor-bio"></p>
+                      <ul class="hero-keywords mentor-keywords" id="hero-keywords"></ul>
+                      <div class="mentor-links-block">
+                        <p class="mentor-links-title" id="mentor-links-title">学术链接</p>
+                        <div id="mentor-links" class="mentor-links"></div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </section>
+
+              <nav class="section-nav reveal" id="site-nav" aria-label="主页导航">
+                <a id="nav-news" href="./index.html#news">团队动态</a>
+                <a id="nav-members" class="is-active" href="./members.html">实验室团队</a>
+                <a id="nav-research" href="./research.html">研究与成果</a>
+                <a id="nav-join" href="./index.html#join">招生 / 加入我们</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section-block section-alt" id="members" aria-labelledby="members-title">
         <div class="container">
           <header class="section-head reveal">
@@ -41,41 +76,7 @@
             <h2 id="members-title">实验室团队</h2>
           </header>
           <div class="team-panel">
-            <div class="mentor-layout reveal" id="team-mentor">
-              <div class="mentor-info-stack">
-                <article class="mentor-card">
-                  <div class="mentor-card-main">
-                    <aside class="mentor-photo" role="img" aria-label="导师照片占位区域">
-                      <img id="mentor-photo-image" class="mentor-photo-image" src="./assets/images/mentor.jpg" alt="导师照片" />
-                      <div id="mentor-photo-fallback" class="mentor-photo-fallback">
-                        <span id="mentor-photo-label">导师照片占位</span>
-                        <small id="mentor-photo-note">后续可替换为真实照片：assets/images/mentor.jpg</small>
-                      </div>
-                    </aside>
-                    <div class="mentor-content">
-                      <h3 id="mentor-name"></h3>
-                      <p class="mentor-role" id="mentor-role"></p>
-                      <p id="mentor-bio"></p>
-                    </div>
-                  </div>
-                  <div class="mentor-grid">
-                    <div>
-                      <h4 id="mentor-history-title">教育背景与学术经历</h4>
-                      <ul id="mentor-history"></ul>
-                    </div>
-                    <div>
-                      <h4 id="mentor-contact-title">联系方式</h4>
-                      <ul id="mentor-contact"></ul>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="team-divider" aria-hidden="true"></div>
-
             <div class="team-members-wrap reveal" id="team-members">
-              <h3 class="team-subtitle" id="team-subtitle">学生成员</h3>
               <div id="member-groups"></div>
             </div>
           </div>
@@ -89,10 +90,6 @@
           <h2 class="footer-title" id="footer-contact-title">联系方式</h2>
           <p id="footer-email"></p>
           <p id="footer-address"></p>
-        </div>
-        <div>
-          <h2 class="footer-title" id="footer-links-title">学术主页链接</h2>
-          <div id="footer-links" class="footer-links"></div>
         </div>
       </div>
       <p class="footer-copy" id="footer-copy"></p>
