@@ -468,7 +468,7 @@ window.SITE_CONTENT_DATA = {
     ],
     students: {
       master: [
-        { name: "吴杨", grade: "24级研究生", direction: "人体动作预测" },
+        { name: "吴扬", grade: "24级研究生", direction: "人体动作预测" },
         { name: "陈家乐", grade: "24级研究生", direction: "视频时序定位" },
         { name: "陈家鹏", grade: "24级研究生", direction: "视频问答" },
         { name: "徐志微", grade: "25级研究生", direction: "视频问答" },
