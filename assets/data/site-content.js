@@ -16,7 +16,7 @@ const PUBLICATIONS = [
     authors: "T. Yu, Z. Tong, J. Yu, K. Zhang",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)",
     year: "2025",
-    link: "#",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/33047",
     linkText: "View Paper",
     cover: "./assets/images/papers/Fine-grained Adaptive Visual Prompt.png",
   },
