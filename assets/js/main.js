@@ -2,7 +2,7 @@ const LANG_STORAGE_KEY = "lab_site_lang";
 const SITE_CONTENT = window.SITE_CONTENT_DATA || {};
 let currentLang = "zh";
 let revealObserver = null;
-let activeView = "news";
+let activeView = "members";
 
 function getCurrentContent() {
   return SITE_CONTENT[currentLang] || SITE_CONTENT.zh;
@@ -107,6 +107,7 @@ function renderHero(content) {
       keywordRoot.appendChild(li);
     });
   }
+
   renderList("hero-highlights", hero.highlights || []);
 }
 
@@ -161,7 +162,6 @@ function renderMentor(content) {
   const { mentor } = content;
   setText("mentor-name", mentor.name);
   setText("mentor-title", mentor.title || mentor.role || "");
-  setText("mentor-direction", mentor.direction || "");
   setText("mentor-bio", mentor.bio);
   renderList("mentor-history", mentor.history || []);
   renderList("mentor-contact", mentor.contact || []);
@@ -339,14 +339,15 @@ function renderResearch(content) {
     item.className = "project-item reveal";
     item.innerHTML = `
       <div class="project-body">
-        <h4 class="project-title">${outcome.title}</h4>
-        <p class="project-summary">${outcome.summary}</p>
+        <p class="project-line">${outcome.text || `${outcome.title || ""} ${outcome.summary || ""}`.trim()}</p>
       </div>
     `;
     outcomeRoot.appendChild(item);
   });
 
   const buildPublicationSummary = (pub) => {
+    const localizedSummary = currentLang === "zh" ? pub.summaryZh : pub.summaryEn;
+    if (localizedSummary && String(localizedSummary).trim() && localizedSummary !== "#") return localizedSummary;
     if (pub.summary && String(pub.summary).trim() && pub.summary !== "#") return pub.summary;
     const title = (pub.title || "").replace(/[.:;!?]+$/g, "");
     if (currentLang === "zh") {
@@ -358,8 +359,11 @@ function renderResearch(content) {
   (content.research?.publications || []).forEach((pub) => {
     const item = document.createElement("article");
     item.className = "publication-item reveal";
+    const publicationLinkText = currentLang === "zh"
+      ? pub.linkTextZh || "查看论文"
+      : pub.linkTextEn || pub.linkText || "View Paper";
     const linkPart = pub.link
-      ? `<a class="publication-link" href="${pub.link}" target="_blank" rel="noreferrer noopener">${pub.linkText || "Link"}</a>`
+      ? `<a class="publication-link" href="${pub.link}" target="_blank" rel="noreferrer noopener">${publicationLinkText}</a>`
       : "";
     const cover = pub.cover || "./assets/images/paper-placeholder.svg";
     const summary = buildPublicationSummary(pub);
@@ -429,8 +433,8 @@ function bindMobileNav() {
 }
 
 function setActiveView(view, shouldUpdateHash = false) {
-  const validViews = ["news", "members", "projects", "publications", "join"];
-  const nextView = validViews.includes(view) ? view : "news";
+  const validViews = ["members", "projects", "publications", "news", "join"];
+  const nextView = validViews.includes(view) ? view : "members";
   activeView = nextView;
 
   document.querySelectorAll("[data-view-panel]").forEach((panel) => {
@@ -559,7 +563,7 @@ function bootstrap() {
   bindMobileNav();
   bindPanelNavigation();
   bindLanguageToggle();
-  activeView = window.location.hash.replace("#", "") || "news";
+  activeView = window.location.hash.replace("#", "") || "members";
   renderPage();
 }
 

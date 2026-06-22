@@ -318,10 +318,11 @@ ol {
 .hero-keywords {
   list-style: none;
   display: flex;
-  gap: 8px;
+  column-gap: 14px;
+  row-gap: 8px;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 14px;
+  margin: 8px 0 8px;
 }
 
 .hero-keywords li {
@@ -408,8 +409,10 @@ ol {
 
 .mentor-card-main {
   display: grid;
-  grid-template-columns: minmax(150px, 220px) 1fr;
-  gap: 18px;
+  --mentor-photo-column: 220px;
+  --mentor-card-gap: 18px;
+  grid-template-columns: minmax(150px, var(--mentor-photo-column)) 1fr;
+  gap: var(--mentor-card-gap);
   align-items: start;
 }
 
@@ -555,11 +558,6 @@ ol {
 .mentor-content h3 {
   font-size: clamp(1.3rem, 1.8vw, 1.62rem);
   margin-bottom: 6px;
-}
-
-.mentor-keywords {
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
 
 .mentor-links-block {
@@ -1121,7 +1119,7 @@ ol {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 14px 16px 14px 44px;
+  padding: 12px 16px 12px 44px;
   position: relative;
 }
 
@@ -1136,16 +1134,11 @@ ol {
   font-size: 0.9rem;
 }
 
-.project-title {
-  margin: 0 0 6px;
-  font-size: 1.03rem;
-  line-height: 1.5;
-}
-
-.project-summary {
+.project-line {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
+  color: #405970;
+  font-size: 0.96rem;
+  line-height: 1.65;
 }
 
 .publication-list {

@@ -184,6 +184,96 @@ const PUBLICATIONS = [
   },
 ];
 
+const PUBLICATION_SUMMARIES = {
+  "Vision-Guided Action: Enhancing 3D Human Motion Prediction with Gaze-informed Affordance in 3D Scenes": {
+    en: "We propose GAP3DS, an affordance-aware human motion prediction model that uses gaze-informed object affordances to improve prediction in complex 3D environments.",
+    zh: "该工作提出 GAP3DS，一种感知物体可供性的 3D 人体动作预测模型，利用凝视信息引导的物体可供性提升复杂三维场景中的人体动作预测效果。",
+  },
+  "Fine-grained Adaptive Visual Prompt for Generative Medical Visual Question Answering": {
+    en: "We incorporate a hierarchical answer generator with parameter-efficient fine-tuning techniques to enhance spatial and contextual understanding with minimal parameter increase, improving alignment between representation learning and the medical domain.",
+    zh: "该工作引入结合参数高效微调技术的层次化答案生成器，在少量参数增量下增强模型对空间信息和上下文信息的理解，促进表征学习与医学场景的对齐。",
+  },
+  "MossVLN: Memory-Observation Synergistic System for Continuous Vision-Language Navigation": {
+    en: "We present an observation-driven waypoint predictor that uses spatial data and aligned visual-textual cues to improve waypoint prediction accuracy in complex real-world navigation scenarios.",
+    zh: "该工作提出面向连续视觉语言导航的观察驱动路点预测器，利用空间信息以及对齐的视觉与文本线索，提升复杂真实场景中的路点预测精度。",
+  },
+  "Adapter-Enhanced Hierarchical Cross-Modal Pre-training for Lightweight Medical Report Generation": {
+    en: "We combine a convolutional stem with hierarchical injectors and extractors, integrating them with Vision Transformers to obtain more comprehensive visual representations for lightweight medical report generation.",
+    zh: "该工作将卷积 stem 与层次化注入器和提取器结合，并与 Vision Transformer 深度融合，为轻量化医学报告生成获得更全面的视觉表征。",
+  },
+  "Multi-Granularity Contrastive Cross-Modal Collaborative Generation for End-to-End Long-Term Video Question Answering": {
+    en: "We present MCG, a fully end-to-end long-term VideoQA model based on multi-granularity contrastive cross-modal collaborative generation.",
+    zh: "该工作提出 MCG 模型，通过多粒度对比学习与跨模态协同生成，实现面向长时视频问答的端到端解决方案。",
+  },
+  "Prompting Video-Language Foundation Models with Domain-specific Fine-grained Heuristics for Video Question Answering": {
+    en: "We introduce HeurVidQA, a framework that uses domain-specific entity-action heuristics to refine pretrained video-language foundation models for video question answering.",
+    zh: "该工作提出 HeurVidQA 框架，利用领域特定的实体-动作细粒度启发式信息优化预训练视频语言基础模型，以提升视频问答能力。",
+  },
+  "A Comprehensive Survey of 3D Dense Captioning: Localizing and Describing Objects in 3D Scenes": {
+    en: "We provide a comprehensive review of 3D dense captioning, covering task definitions, model architectures, datasets, evaluation metrics, and future research opportunities.",
+    zh: "该工作系统综述三维密集描述任务，涵盖任务定义、模型架构、数据集、评价指标以及未来研究方向。",
+  },
+  "Consistency Conditioned Memory Augmented Dynamic Diagnosis Model for Medical Visual Question Answering": {
+    en: "We propose CoCoMeD, a consistency-conditioned memory augmented dynamic diagnosis model with a dynamic memory diagnosis engine and a consistency-conditioned enforcer.",
+    zh: "该工作提出 CoCoMeD，一种一致性条件约束的记忆增强动态诊断模型，包含动态记忆诊断引擎和一致性条件约束模块。",
+  },
+  "Long-Term Video Question Answering via Multimodal Hierarchical Memory Attentive Networks": {
+    en: "We propose multimodal hierarchical memory attentive networks with two heterogeneous memory subnetworks: a top guided memory network and a bottom enhanced multimodal memory attentive network.",
+    zh: "该工作提出多模态层次记忆注意网络，包含顶部引导记忆网络和底部增强多模态记忆注意网络两个异构记忆子网络。",
+  },
+  "Compositional Attention Networks with Two-Stream Fusion for Video Question Answering": {
+    en: "We propose compositional attention networks with two-stream fusion for VideoQA, sampling video snippets through a two-stream mechanism and extracting sequential visual features to represent video semantics.",
+    zh: "该工作提出面向视频问答的双流融合组合注意网络，通过双流机制采样视频片段并提取序列视觉特征，以表征视频语义。",
+  },
+  "HuMo3D: Intention-Driven Dual-Branch Multimodal Human Motion Prediction in 3D Scenes": {
+    en: "We propose HuMo3D, a dual-branch multimodal framework that explicitly integrates human intention with scene geometry for 3D human motion prediction.",
+    zh: "该工作提出 HuMo3D，一种双分支多模态框架，显式融合人类意图与场景几何信息，用于三维场景中的人体动作预测。",
+  },
+  "SwiftCraft3D: semantic-enhanced multi-view prompting for efficient and high-fidelity text-to-3D generation": {
+    en: "We use semantic-enhanced multi-view visual prompt generation, enriching input text with GPT-4 and generating multi-view visual prompts through a fine-tuned diffusion model.",
+    zh: "该工作采用语义增强的多视图视觉提示生成方法，利用 GPT-4 丰富输入文本语义，并通过微调扩散模型生成多视图视觉提示。",
+  },
+  "WP-CMA: Waypoint Prediction for Cross-modal Alignment of Vision-and-Language Navigation in Continuous Environments": {
+    en: "We introduce WP-CMA, a cross-modal alignment framework designed for waypoint prediction in continuous vision-language navigation environments.",
+    zh: "该工作提出 WP-CMA，一种面向连续视觉语言导航场景中路点预测任务的跨模态对齐框架。",
+  },
+  "CloudCap3D: enhancing 3D in-scene descriptions via point cloud integration and efficient text filtering": {
+    en: "We introduce a 3D-aware caption filtering mechanism that selects geometry-consistent textual descriptions without extensive large language model inference, reducing generation cost.",
+    zh: "该工作提出三维感知的描述过滤机制，在无需大量调用大语言模型推理的情况下筛选几何一致的文本描述，从而降低生成成本。",
+  },
+  "3D human pose estimation with multi-hypotheses gated transformer": {
+    en: "We propose a Multi-Hypotheses Gated Transformer Network for 3D human pose estimation to alleviate ambiguity in pose prediction.",
+    zh: "该工作提出多假设门控 Transformer 网络用于三维人体姿态估计，以缓解姿态预测中的不确定性问题。",
+  },
+  "Semi-supervised RGB-D hand gesture recognition via mutual learning of self-supervised models": {
+    en: "We propose MLRAGP, a semi-supervised RGB-D hand gesture recognition method that exploits unlabeled RGB and depth images through self-supervised learning and performs multimodal decision fusion via mutual learning.",
+    zh: "该工作提出半监督 RGB-D 手势识别方法 MLRAGP，通过自监督学习利用未标注 RGB 与深度图像，并借助互学习实现多模态决策融合。",
+  },
+  "Token-Mixer: Bind Image and Text in One Embedding Space for Medical Image Reporting": {
+    en: "We propose Token-Mixer, a framework that learns to bind image and text representations in a unified embedding space for medical image reporting.",
+    zh: "该工作提出 Token-Mixer 框架，将图像与文本表征绑定到统一嵌入空间中，用于医学影像报告生成。",
+  },
+  "Multi-task Compositional Network for Visual Relationship Detection": {
+    en: "We propose significance detection as a novel subtask for visual relationship detection, complementing object detection and predicate detection.",
+    zh: "该工作提出视觉关系检测中的新子任务“显著性检测”，作为目标检测和谓词检测的补充，以提升视觉关系理解能力。",
+  },
+  "On Exploring Undetermined Relationships for Visual Relationship Detection": {
+    en: "We propose MF-URLN, a multimodal feature based undetermined relationship learning network that improves visual relationship detection performance.",
+    zh: "该工作提出基于多模态特征的未确定关系学习网络 MF-URLN，有效提升视觉关系检测性能。",
+  },
+  "ActivityNet-QA: A dataset for understanding complex Web videos via question answering": {
+    en: "We present a statistical analysis of the ActivityNet-QA dataset and conduct extensive experiments comparing existing VideoQA baselines.",
+    zh: "该工作对 ActivityNet-QA 数据集进行统计分析，并通过大量实验对比现有视频问答基线方法。",
+  },
+};
+
+PUBLICATIONS.forEach((publication) => {
+  const summary = PUBLICATION_SUMMARIES[publication.title];
+  if (!summary) return;
+  publication.summaryEn = summary.en;
+  publication.summaryZh = summary.zh;
+});
+
 window.SITE_CONTENT_DATA = {
   zh: {
     meta: {
@@ -247,7 +337,7 @@ window.SITE_CONTENT_DATA = {
       labName: "多模态内容理解与具身智能实验室",
       kicker: "Academic Profile",
       tagline: "围绕多模态理解、具身交互与可信人工智能开展研究与研究生培养。",
-      keywords: ["多模态内容理解", "具身智能", "视觉问答", "可信人工智能"],
+      keywords: ["跨媒体分析", "多模态内容理解", "具身智能", "视觉问答", "可信人工智能"],
       highlights: [
         "发表 IEEE TIP、TMM、TMI、IJCV 及 CVPR、AAAI 等论文 20 余篇",
         "主持国家自然科学基金面上、青年和浙江省自然科学基金面上等项目",
@@ -257,8 +347,8 @@ window.SITE_CONTENT_DATA = {
     mentor: {
       name: "余婷",
       title: "副教授 / 博士生导师",
-      direction: "计算机视觉与多模态智能",
-      role: "副教授 / 博士生导师 | 计算机视觉与多模态智能",
+      direction: "",
+      role: "副教授 / 博士生导师",
       bio: "主要从事多模态内容理解、跨媒体智能、视觉问答、视觉语言导航、具身智能与可信人工智能等方向的研究，重点关注多模态大模型驱动的视觉-语言理解、跨模态推理与智能体交互。现担任 CCF 多媒体技术执行委员、CCF 自然语言处理专委委员、CCF 智能机器人专委委员、CCF 计算机视觉专委委员及 CCF YOCSEF 委员。长期担任 IEEE TIP、TNNLS、TCSVT 等国际期刊审稿人，以及 CVPR、ICCV、AAAI、ACM MM 等国际会议 PC 或审稿人。近年来，在 IEEE TIP、TMM、TMI、IJCV 等国际期刊及 CVPR、AAAI 等 CCF A 类会议上发表论文 20 余篇。主持国家自然科学基金面上项目、青年项目、浙江省自然科学基金面上项目等科研项目，并作为课题骨干参与多项国家级和省部级科研项目。",
       researchAreas: [
         "多模态内容理解：聚焦图像、视频、文本、语音与三维场景的跨模态感知、语义对齐和知识增强。",
@@ -392,22 +482,22 @@ window.SITE_CONTENT_DATA = {
       { year: 2025, name: "吴逸非", track: "高校教师", destination: "上饶师范学院", focus: "视觉语言导航" },
       { year: 2025, name: "傅琨皓", track: "互联网企业", destination: "算法工程师", focus: "视频问答" },
       { year: 2025, name: "葛彬辉", track: "继续深造", destination: "南京理工大学博士", focus: "医学跨模态分析" },
-      { year: 2025, name: "林筱珺", track: "企业就业", destination: "长江存储", focus: "3D跨模态" },
-      { year: 2026, name: "董泽仪", track: "教师", destination: "嵊州长乐中学", focus: "3D生成" },
+      { year: 2025, name: "林筱珺", track: "企业就业", destination: "长江存储", focus: "3D跨模态分析" },
+      { year: 2026, name: "董泽仪", track: "教师", destination: "嵊州长乐中学", focus: "3D跨模态分析" },
       { year: 2026, name: "童子轩", track: "继续深造", destination: "厦门大学博士", focus: "医学跨模态分析" },
-      { year: 2026, name: "牛志远", track: "企业就业", destination: "智能体工程师", focus: "3D跨模态" },
+      { year: 2026, name: "牛志远", track: "企业就业", destination: "智能体工程师", focus: "3D跨模态分析" },
       { year: 2026, name: "季桑羽", track: "继续深造", destination: "美国南加州大学", focus: "遥感图像问答" },
     ],
     research: {
       outcomes: [
-        { title: "开放城下长时视频跨模态可信问答技术研究", summary: "主持｜面上项目｜批准号 62572164" },
-        { title: "基于大规模跨媒体知识网络的复杂视频问答方法研究", summary: "参与｜重点项目｜批准号 61836002" },
-        { title: "基于跨媒体层次深度推理的视频问答技术研究", summary: "主持｜青年科学基金项目（C类）｜批准号 62002314" },
-        { title: "基于跨模态推理的图像美学质量评价及增强", summary: "参与｜面上项目｜批准号 61971172" },
-        { title: "基于用户反馈特征预测的细粒度图像分类研究", summary: "参与｜面上项目｜批准号 61972119" },
-        { title: "基于分治策略与增量字典学习的图像超分辨重建方法研究", summary: "参与｜面上项目｜批准号 61971339" },
-        { title: "基于层次深度网络混合模型的图像识别技术研究", summary: "参与｜青年科学基金项目（C类）｜批准号 61806063" },
-        { title: "跨媒体数据-知识联合增强的视频问答技术研究", summary: "主持｜浙江省自然科学基金面上项目｜批准号 LY23F020005" },
+        { text: "国家自然科学基金面上项目：开放域下长时视频跨模态可信问答技术研究（62572164），主持，2026.01-2029.12" },
+        { text: "国家自然科学基金青年项目：基于跨媒体层次深度推理的视频问答技术研究（62002314），主持，2020.01-2023.12" },
+        { text: "浙江省自然科学基金面上项目：跨媒体“数据-知识”联合增强的视频问答技术研究（LY23F020005），主持，2023.01-2025.12" },
+        { text: "重点项目：基于大规模跨媒体知识网络的复杂视频问答方法研究（61836002），参与" },
+        { text: "国家自然科学基金面上项目：基于跨模态推理的图像美学质量评价及增强（61971172），参与" },
+        { text: "国家自然科学基金面上项目：基于用户反馈特征预测的细粒度图像分类研究（61972119），参与" },
+        { text: "国家自然科学基金面上项目：基于分治策略与增量字典学习的图像超分辨重建方法研究（61971339），参与" },
+        { text: "国家自然科学基金青年项目：基于层次深度网络混合模型的图像识别技术研究（61806063），参与" },
       ],
       publications: PUBLICATIONS,
     },
@@ -430,8 +520,8 @@ window.SITE_CONTENT_DATA = {
       emailUrl: "mailto:yut@hznu.edu.cn",
       address: "地址：杭州师范大学仓前校区勤园11号楼",
       links: [
-        { label: "GitHub", icon: "GH", url: "https://github.com/OpenMICG" },
         { label: "Google Scholar", icon: "GS", url: "https://scholar.google.com/citations?user=01_-U40AAAAJ&hl=en" },
+        { label: "GitHub", icon: "GH", url: "https://github.com/OpenMICG" },
         { label: "Email", icon: "@", url: "mailto:yut@hznu.edu.cn" },
       ],
       copy: "© 2026 余婷学术主页 | OpenMICG",
@@ -499,7 +589,7 @@ window.SITE_CONTENT_DATA = {
       labName: "Lab for Multimodal Understanding and Embodied Intelligence",
       kicker: "Academic Profile",
       tagline: "Research and graduate supervision centered on multimodal understanding, embodied interaction, and trustworthy AI.",
-      keywords: ["Multimodal Understanding", "Embodied Intelligence", "Visual Question Answering", "Trustworthy AI"],
+      keywords: ["Cross-media Analysis", "Multimodal Understanding", "Embodied Intelligence", "Visual Question Answering", "Trustworthy AI"],
       highlights: [
         "20+ papers in IEEE TIP, TMM, TMI, IJCV, CVPR, AAAI, and related venues",
         "PI of NSFC General, NSFC Young Scientists Fund, and Zhejiang Provincial NSF projects",
@@ -509,8 +599,8 @@ window.SITE_CONTENT_DATA = {
     mentor: {
       name: "Ting Yu",
       title: "Associate Professor / Ph.D. Advisor",
-      direction: "Computer Vision and Multimodal Intelligence",
-      role: "Associate Professor / Ph.D. Advisor | Computer Vision and Multimodal Intelligence",
+      direction: "",
+      role: "Associate Professor / Ph.D. Advisor",
       bio: "Her research focuses on multimodal content understanding, cross-media intelligence, visual question answering, vision-language navigation, embodied intelligence, and trustworthy AI, with emphasis on multimodal foundation model driven vision-language understanding, cross-modal reasoning, and agent interaction. She serves on CCF committees for multimedia technology, natural language processing, intelligent robotics, computer vision, and CCF YOCSEF. She is a long-term reviewer for IEEE TIP, TNNLS, TCSVT, and PC/reviewer for CVPR, ICCV, AAAI, ACM MM, and related venues. In recent years, she has published more than 20 papers in IEEE TIP, TMM, TMI, IJCV, CVPR, AAAI, and related top venues. She has led NSFC General Program, NSFC Young Scientists Fund, and Zhejiang Provincial NSF projects, and participated as a core member in multiple national and provincial research projects.",
       researchAreas: [
         "Multimodal Content Understanding: cross-modal perception, semantic alignment, and knowledge enhancement across images, videos, text, speech, and 3D scenes.",
@@ -644,22 +734,22 @@ window.SITE_CONTENT_DATA = {
       { year: 2025, name: "Wu Yifei", track: "University Faculty", destination: "Shangrao Normal University", focus: "Vision-Language Navigation" },
       { year: 2025, name: "Fu Kunhao", track: "Industry", destination: "Algorithm Engineer", focus: "Video Question Answering" },
       { year: 2025, name: "Ge Binhui", track: "Further Study", destination: "Ph.D. Program at Nanjing University of Science and Technology", focus: "Medical Cross-modal Analysis" },
-      { year: 2025, name: "Lin Xiaojun", track: "Industry", destination: "Yangtze Memory Technologies", focus: "3D Cross-modal Learning" },
-      { year: 2026, name: "Dong Zeyi", track: "Education", destination: "Shengzhou Changle Middle School", focus: "3D Generation" },
+      { year: 2025, name: "Lin Xiaojun", track: "Industry", destination: "Yangtze Memory Technologies", focus: "3D Cross-modal Analysis" },
+      { year: 2026, name: "Dong Zeyi", track: "Education", destination: "Shengzhou Changle Middle School", focus: "3D Cross-modal Analysis" },
       { year: 2026, name: "Tong Zixuan", track: "Further Study", destination: "Ph.D. at Xiamen University", focus: "Medical Cross-modal Analysis" },
-      { year: 2026, name: "Niu Zhiyuan", track: "Industry", destination: "Agent Engineer", focus: "3D Cross-modal Learning" },
+      { year: 2026, name: "Niu Zhiyuan", track: "Industry", destination: "Agent Engineer", focus: "3D Cross-modal Analysis" },
       { year: 2026, name: "Ji Sangyu", track: "Further Study", destination: "University of Southern California", focus: "Remote Sensing Image Question Answering" },
     ],
     research: {
       outcomes: [
-        { title: "Trustworthy Cross-modal Question Answering for Long-duration Videos in Open-world Settings", summary: "PI | NSFC General Program | Grant No. 62572164" },
-        { title: "Complex Video Question Answering via Large-scale Cross-media Knowledge Networks", summary: "Participant | NSFC Key Program | Grant No. 61836002" },
-        { title: "Video Question Answering via Cross-media Hierarchical Deep Reasoning", summary: "PI | NSFC Young Scientists Fund | Grant No. 62002314" },
-        { title: "Image Aesthetic Quality Assessment and Enhancement via Cross-modal Reasoning", summary: "Participant | NSFC General Program | Grant No. 61971172" },
-        { title: "Fine-grained Image Classification via User-feedback Feature Prediction", summary: "Participant | NSFC General Program | Grant No. 61972119" },
-        { title: "Image Super-resolution Reconstruction via Divide-and-conquer and Incremental Dictionary Learning", summary: "Participant | NSFC General Program | Grant No. 61971339" },
-        { title: "Image Recognition via Hierarchical Deep-network Hybrid Models", summary: "Participant | NSFC Young Scientists Fund | Grant No. 61806063" },
-        { title: "Video Question Answering with Joint Data-knowledge Enhancement", summary: "PI | Zhejiang Provincial NSF General Program | Grant No. LY23F020005" },
+        { text: "NSFC General Program: Trustworthy Cross-modal Question Answering for Long-duration Videos in Open-domain Settings (62572164), PI, 2026.01-2029.12" },
+        { text: "NSFC Young Scientists Fund: Video Question Answering via Cross-media Hierarchical Deep Reasoning (62002314), PI, 2020.01-2023.12" },
+        { text: "Zhejiang Provincial NSF General Program: Video Question Answering with Joint Cross-media Data-knowledge Enhancement (LY23F020005), PI, 2023.01-2025.12" },
+        { text: "NSFC Key Program: Complex Video Question Answering via Large-scale Cross-media Knowledge Networks (61836002), Participant" },
+        { text: "NSFC General Program: Image Aesthetic Quality Assessment and Enhancement via Cross-modal Reasoning (61971172), Participant" },
+        { text: "NSFC General Program: Fine-grained Image Classification via User-feedback Feature Prediction (61972119), Participant" },
+        { text: "NSFC General Program: Image Super-resolution Reconstruction via Divide-and-conquer and Incremental Dictionary Learning (61971339), Participant" },
+        { text: "NSFC Young Scientists Fund: Image Recognition via Hierarchical Deep-network Hybrid Models (61806063), Participant" },
       ],
       publications: PUBLICATIONS,
     },
@@ -682,8 +772,8 @@ window.SITE_CONTENT_DATA = {
       emailUrl: "mailto:yut@hznu.edu.cn",
       address: "Address: Qinyuan Building 11, Cangqian Campus, Hangzhou Normal University",
       links: [
-        { label: "GitHub", icon: "GH", url: "https://github.com/OpenMICG" },
         { label: "Google Scholar", icon: "GS", url: "https://scholar.google.com/citations?user=01_-U40AAAAJ&hl=en" },
+        { label: "GitHub", icon: "GH", url: "https://github.com/OpenMICG" },
         { label: "Email", icon: "@", url: "mailto:yut@hznu.edu.cn" },
       ],
       copy: "© 2026 Ting Yu Academic Homepage | OpenMICG",

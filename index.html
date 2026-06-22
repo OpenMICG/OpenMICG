@@ -46,7 +46,6 @@
                     <div class="mentor-content">
                       <h3 id="mentor-name"></h3>
                       <p class="mentor-title" id="mentor-title"></p>
-                      <p class="mentor-direction" id="mentor-direction"></p>
                       <p id="mentor-bio"></p>
                       <ul class="hero-keywords mentor-keywords" id="hero-keywords"></ul>
                       <div class="mentor-links-block">
@@ -59,10 +58,10 @@
               </section>
 
               <nav class="section-nav reveal" id="site-nav" aria-label="主页导航">
-                <a id="nav-news" class="is-active" href="#news" data-view-target="news">团队动态</a>
-                <a id="nav-members" href="#members" data-view-target="members">实验室团队</a>
+                <a id="nav-members" class="is-active" href="#members" data-view-target="members">实验室团队</a>
                 <a id="nav-projects" href="#projects" data-view-target="projects">科研项目</a>
                 <a id="nav-publications" href="#publications" data-view-target="publications">学术论文</a>
+                <a id="nav-news" href="#news" data-view-target="news">团队动态</a>
                 <a id="nav-join" href="#join" data-view-target="join">招生 / 加入我们</a>
               </nav>
             </div>
@@ -73,15 +72,7 @@
       <section class="section-block section-alt" id="lab-overview">
         <div class="container">
           <div class="main-column home-main-column">
-            <section class="section-block section-inner content-panel is-active" id="news" aria-labelledby="news-title" data-view-panel="news">
-              <header class="section-head reveal">
-                <p class="section-label" id="news-label">Updates</p>
-                <h2 id="news-title">实验室日常信息</h2>
-              </header>
-              <div id="news-timeline" class="timeline"></div>
-            </section>
-
-            <section class="section-block section-inner content-panel" id="members" aria-labelledby="members-title" data-view-panel="members" hidden>
+            <section class="section-block section-inner content-panel is-active" id="members" aria-labelledby="members-title" data-view-panel="members">
               <header class="section-head reveal">
                 <p class="section-label" id="members-label">Team</p>
                 <h2 id="members-title">实验室团队</h2>
@@ -113,6 +104,14 @@
               <div class="publication-section">
                 <div id="research-publications" class="publication-list"></div>
               </div>
+            </section>
+
+            <section class="section-block section-inner content-panel" id="news" aria-labelledby="news-title" data-view-panel="news" hidden>
+              <header class="section-head reveal">
+                <p class="section-label" id="news-label">Updates</p>
+                <h2 id="news-title">实验室日常信息</h2>
+              </header>
+              <div id="news-timeline" class="timeline"></div>
             </section>
 
             <section class="section-block section-inner compact-join-section content-panel" id="join" aria-labelledby="join-title" data-view-panel="join" hidden>
