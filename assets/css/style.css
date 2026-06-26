@@ -146,7 +146,7 @@ ol {
   min-height: 66px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
 }
 
@@ -163,17 +163,6 @@ ol {
   gap: 10px;
   text-decoration: none;
   font-weight: 600;
-}
-
-.brand-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  font-size: 15px;
-  color: #fff;
-  background: linear-gradient(140deg, var(--brand), var(--accent));
 }
 
 .site-nav {

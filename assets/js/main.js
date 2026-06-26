@@ -93,7 +93,6 @@ function applyStaticUI(content) {
 
 function renderHero(content) {
   const { hero } = content;
-  setText("nav-lab-name", hero.shortName);
   setText("hero-kicker", hero.kicker);
   setText("hero-title", hero.labName);
   setText("hero-tagline", hero.tagline);
