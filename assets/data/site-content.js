@@ -381,6 +381,18 @@ window.SITE_CONTENT_DATA = {
     },
     news: [
       {
+        date: "2026-07-10",
+        tag: "论文接收",
+        title: "🎉 3DGFA 被 ACM MM 2026 接收！",
+        summary: "论文“3DGFA: 3D Gaze-consistent Face Anonymization”被 ACM MM 2026 接收！",
+      },
+      {
+        date: "2026-07-10",
+        tag: "论文接收",
+        title: "🎉 Aegis 被 ACM MM 2026 接收！",
+        summary: "论文“Aegis: Reconciling Global Path Navigation with Local Fine-Grained Interaction in 3D Environments”被 ACM MM 2026 接收！",
+      },
+      {
         date: "2026-03-10",
         tag: "论文接收",
         title: "🎉 CloudCap3D 被 Multimedia Systems 接收！",
@@ -631,6 +643,18 @@ window.SITE_CONTENT_DATA = {
       welcome: "The group provides systematic research training and supports publications, project participation, and continued study.",
     },
     news: [
+      {
+        date: "2026-07-10",
+        tag: "Paper Accepted",
+        title: "🎉 3DGFA Accepted by ACM MM 2026!",
+        summary: "The paper “3DGFA: 3D Gaze-consistent Face Anonymization” was accepted by ACM MM 2026!",
+      },
+      {
+        date: "2026-07-10",
+        tag: "Paper Accepted",
+        title: "🎉 Aegis Accepted by ACM MM 2026!",
+        summary: "The paper “Aegis: Reconciling Global Path Navigation with Local Fine-Grained Interaction in 3D Environments” was accepted by ACM MM 2026!",
+      },
       {
         date: "2026-03-10",
         tag: "Paper Accepted",
