@@ -204,6 +204,7 @@ function renderNews(content) {
 function getStudyOrder(gradeLabel) {
   if (/(24级|Class of 2024)/.test(gradeLabel)) return 1;
   if (/(25级|Class of 2025)/.test(gradeLabel)) return 2;
+  if (/(26级|Class of 2026)/.test(gradeLabel)) return 3;
   if (/(三年级|Year 3)/.test(gradeLabel)) return 1;
   if (/(二年级|Year 2)/.test(gradeLabel)) return 2;
   if (/(一年级|Year 1)/.test(gradeLabel)) return 3;
@@ -213,6 +214,7 @@ function getStudyOrder(gradeLabel) {
 function getCohortLabelFromGrade(gradeLabel) {
   if (/(24级|Class of 2024)/.test(gradeLabel)) return currentLang === "zh" ? "2024级" : "Class of 2024";
   if (/(25级|Class of 2025)/.test(gradeLabel)) return currentLang === "zh" ? "2025级" : "Class of 2025";
+  if (/(26级|Class of 2026)/.test(gradeLabel)) return currentLang === "zh" ? "2026级" : "Class of 2026";
   return gradeLabel || "";
 }
 
