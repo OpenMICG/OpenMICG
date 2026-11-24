@@ -526,12 +526,12 @@ window.SITE_CONTENT_DATA = {
     research: {
       outcomes: [
         { text: "主持国家自然科学基金面上项目：开放域下长时视频跨模态可信问答技术研究（62572164），2026.01-2029.12" },
-        { text: "主持国家自然科学基金青年项目：基于跨媒体层次深度推理的视频问答技术研究（62002314），2020.01-2023.12" },
+        { text: "主持国家自然科学基金青年项目：基于跨媒体层次深度推理的视频问答技术研究（62002314），2021.01-2023.12" },
         { text: "主持浙江省自然科学基金面上项目：跨媒体“数据-知识”联合增强的视频问答技术研究（LY23F020005），2023.01-2025.12" },
         { text: "参与国家自然科学基金重点项目：基于大规模跨媒体知识网络的复杂视频问答方法研究（61836002），2020.01-2025.12" },
         { text: "参与国家自然科学基金面上项目：基于跨模态推理的图像美学质量评价及增强（61971172），2020.01-2023.12" },
         { text: "参与国家自然科学基金面上项目：基于用户反馈特征预测的细粒度图像分类研究（61972119），2020.01-2023.12" },
-        { text: "参与国家自然科学基金面上项目：基于分治策略与增量字典学习的图像超分辨重建方法研究（61971339），2021.01-2023.12" },
+        { text: "参与国家自然科学基金面上项目：基于分治策略与增量字典学习的图像超分辨重建方法研究（61971339），2020.01-2023.12" },
         { text: "参与国家自然科学基金青年项目：基于层次深度网络混合模型的图像识别技术研究（61806063），2019.01-2021.12" },
       ],
       publications: PUBLICATIONS,
@@ -793,12 +793,12 @@ window.SITE_CONTENT_DATA = {
     research: {
       outcomes: [
         { text: "PI, NSFC General Program: Trustworthy Cross-modal Question Answering for Long-duration Videos in Open-domain Settings (62572164), 2026.01-2029.12" },
-        { text: "PI, NSFC Young Scientists Fund: Video Question Answering via Cross-media Hierarchical Deep Reasoning (62002314), 2020.01-2023.12" },
+        { text: "PI, NSFC Young Scientists Fund: Video Question Answering via Cross-media Hierarchical Deep Reasoning (62002314), 2021.01-2023.12" },
         { text: "PI, Zhejiang Provincial NSF General Program: Video Question Answering with Joint Cross-media Data-knowledge Enhancement (LY23F020005), 2023.01-2025.12" },
         { text: "Participant, NSFC Key Program: Complex Video Question Answering via Large-scale Cross-media Knowledge Networks (61836002), 2020.01-2025.12" },
         { text: "Participant, NSFC General Program: Image Aesthetic Quality Assessment and Enhancement via Cross-modal Reasoning (61971172), 2020.01-2023.12" },
         { text: "Participant, NSFC General Program: Fine-grained Image Classification via User-feedback Feature Prediction (61972119), 2020.01-2023.12" },
-        { text: "Participant, NSFC General Program: Image Super-resolution Reconstruction via Divide-and-conquer and Incremental Dictionary Learning (61971339), 2021.01-2023.12" },
+        { text: "Participant, NSFC General Program: Image Super-resolution Reconstruction via Divide-and-conquer and Incremental Dictionary Learning (61971339), 2020.01-2023.12" },
         { text: "Participant, NSFC Young Scientists Fund: Image Recognition via Hierarchical Deep-network Hybrid Models (61806063), 2019.01-2021.12" },
       ],
       publications: PUBLICATIONS,
