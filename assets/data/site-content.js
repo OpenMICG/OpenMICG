@@ -401,6 +401,12 @@ window.SITE_CONTENT_DATA = {
     },
     news: [
       {
+        date: "2026-11",
+        tag: "学术交流",
+        title: "📍 参加 ACM MM 2026（里约热内卢）！",
+        summary: "参加在巴西里约热内卢举办的 ACM MM 2026，与领域内学者和同行开展学术交流！",
+      },
+      {
         date: "2026-07-10",
         tag: "论文接收",
         title: "🎉 3DGFA 被 ACM MM 2026 接收！",
@@ -667,6 +673,12 @@ window.SITE_CONTENT_DATA = {
       welcome: "The group provides systematic research training and supports publications, project participation, and continued study.",
     },
     news: [
+      {
+        date: "2026-11",
+        tag: "Academic Exchange",
+        title: "📍 Attended ACM MM 2026 in Rio de Janeiro!",
+        summary: "The group attended ACM MM 2026 in Rio de Janeiro, Brazil, and exchanged ideas with researchers and peers!",
+      },
       {
         date: "2026-07-10",
         tag: "Paper Accepted",
